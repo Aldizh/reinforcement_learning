@@ -1,0 +1,15 @@
+MODULES_MANAGER_V2
+eightpuzzle|C:\Users\Aldi\workspace\AI\p2\eightpuzzle.py
+game|C:\Users\Aldi\workspace\AI\p2\game.py
+ghostAgents|C:\Users\Aldi\workspace\AI\p2\ghostAgents.py
+graphicsDisplay|C:\Users\Aldi\workspace\AI\p2\graphicsDisplay.py
+graphicsUtils|C:\Users\Aldi\workspace\AI\p2\graphicsUtils.py
+keyboardAgents|C:\Users\Aldi\workspace\AI\p2\keyboardAgents.py
+layout|C:\Users\Aldi\workspace\AI\p2\layout.py
+pacman|C:\Users\Aldi\workspace\AI\p2\pacman.py
+pacmanAgents|C:\Users\Aldi\workspace\AI\p2\pacmanAgents.py
+search|C:\Users\Aldi\workspace\AI\p2\search.py
+searchAgents|C:\Users\Aldi\workspace\AI\p2\searchAgents.py
+searchAgents.old|C:\Users\Aldi\workspace\AI\p2\searchAgents.old.py
+textDisplay|C:\Users\Aldi\workspace\AI\p2\textDisplay.py
+util|C:\Users\Aldi\workspace\AI\p2\util.py
