@@ -18,6 +18,15 @@ class IdentityExtractor(FeatureExtractor):
     feats[(state,action)] = 1.0
     return feats
 
+class CoordinateExtractor(FeatureExtractor):
+  def getFeatures(self, state, action):
+    feats = util.Counter()
+    feats[state] = 1.0
+    feats['x=%d' % state[0]] = 1.0
+    feats['y=%d' % state[0]] = 1.0
+    feats['action=%s' % action] = 1.0
+    return feats
+
 def closestFood(pos, food, walls):
   """
   closestFood -- this is similar to the function that we have

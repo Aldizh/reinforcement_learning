@@ -183,20 +183,28 @@ class GridworldEnvironment(environment.Environment):
     return self.gridWorld.getPossibleActions(state)
         
   def doAction(self, action):
-    successors = self.gridWorld.getTransitionStatesAndProbs(self.state, action) 
-    sum = 0.0
-    rand = random.random()
     state = self.getCurrentState()
+    (nextState, reward) = self.getRandomNextState(state, action, None)
+    self.state = nextState
+    return (nextState, reward)
+
+  def getRandomNextState(self, state, action, randObj):
+    sum = 0.0
+    rand = -1.0
+    if randObj is None:
+      rand = random.random()
+    else:
+      rand = randObj.random()
+    successors = self.gridWorld.getTransitionStatesAndProbs(state, action)
     for nextState, prob in successors:
-      sum += prob
-      if sum > 1.0:
-        raise 'Total transition probability more than one; sample failure.' 
-      if rand < sum:
-        reward = self.gridWorld.getReward(state, action, nextState)
-        self.state = nextState
-        return (nextState, reward)
-    raise 'Total transition probability less than one; sample failure.'    
-        
+        sum += prob
+        if sum > 1.0:
+          raise 'Total transition probability more than one; sample failure.'
+        if rand < sum:
+          reward = self.gridWorld.getReward(state, action, nextState)
+          return (nextState, reward)
+    raise 'Total transition probability less than one; sample failure.'
+
   def reset(self):
     self.state = self.gridWorld.getStartState()
 
